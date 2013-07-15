@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
 <script type="text/javascript">
 	$(document).bind("mobileinit", function() {
-//		$.mobile.defaultPageTransition = 'flow';
-//		$.mobile.loadingMessageTextVisible = true;
+		//		$.mobile.defaultPageTransition = 'flow';
+		//		$.mobile.loadingMessageTextVisible = true;
 	});
 
 	document.addEventListener("deviceready", function() {
@@ -20,7 +20,6 @@
 		 .attr("data-icon", "delete")
 		 .button('refresh');
 		 }*/
-		 navigator.notification.beep(1);
 		window.plugins.applicationPreference.get("Device.IMEI",
 				function(value) {
 					navigator.notification.alert('IMEI is: ' + value, null,
@@ -30,7 +29,6 @@
 							+ value, null, 'Something was wrong...', 'wow...');
 					console.log(JSON.stringify(error));
 				});
-		navigator.notification.beep(1);
 		//		Console.log($.plugins.AppPreferences.get("Device.IMEI"));
 		//		$('#IMEI').attr('value', $.plugins.AppPreferences.get("Device.IMEI"));
 

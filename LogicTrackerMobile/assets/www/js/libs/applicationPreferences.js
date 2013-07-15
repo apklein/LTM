@@ -43,4 +43,11 @@ if (!window.plugins) {
 }
 if (!window.plugins.applicationPreference) {
     window.plugins.applicationPreference = cordova.require("cordova/plugin/applicationpreferences");
+	navigator.notification.alert(window.plugins.applicationPreference, null,
+			'Your...', 'Great!');
+} else {
+	navigator.notification.alert("Error", null,
+			'Your...', 'Great!');
+	
+	
 }
