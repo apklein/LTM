@@ -146,9 +146,9 @@ LogicTracker Mobile App
             name="android-package"
             value="org.apache.cordova.InAppBrowser" />
     </feature>
-    <feature name="applicationPreferences" >
-        <param
-            name="android-package"
-            value="com.simonmacdonald.prefs.AppPreferences" />
-    </feature>
+<!--     <feature name="applicationPreferences" > -->
+<!--         <param -->
+<!--             name="android-package" -->
+<!--             value="com.simonmacdonald.prefs.AppPreferences" /> -->
+<!--     </feature> -->
 </widget>
