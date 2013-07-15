@@ -20,6 +20,7 @@ public class MainActivity extends DroidGap {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setDefaultAppPreferences();
+		super.init();
 		super.loadUrl(Config.getStartUrl());
 
 	}
