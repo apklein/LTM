@@ -22,13 +22,12 @@
 		 .attr("data-icon", "delete")
 		 .button('refresh');
 		 }*/
+		console.log('before');
 		window.plugins.applicationPreference.get("Device.IMEI",
 				function(value) {
-					navigator.notification.alert('IMEI is: ' + value, null,
-							'Your...', 'Great!');
+					$('#imei').html('Your IMEI is: ' + value);
 				}, function(error) {
-					navigator.notification.alert('we cannot get your IMEI.'
-							+ value, null, 'Something was wrong...', 'wow...');
+					$('#imei').html('Your IMEI is: #ERROR#');
 					console.log(JSON.stringify(error));
 				});
 		//		Console.log($.plugins.AppPreferences.get("Device.IMEI"));
@@ -57,7 +56,7 @@
 			<h6>Step 1</h6>
 		</div>
 		<div data-role="content">
-			<div id="IMEI"></div>
+			<div id="imei"></div>
 			<a href="#page1" class="nextpageButton"
 				data-msgtext="going to page 1!" data-role="button"
 				data-icon="arrow-r" data-iconpos="right">Go to Page 1</a>
