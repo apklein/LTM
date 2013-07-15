@@ -1,3 +1,6 @@
+navigator.notification.alert("beforeDefine", null,
+		'Your2...', 'Great2!');
+
 cordova.define("cordova/plugin/applicationpreferences", function(require, exports, module) {
 	var exec = require("cordova/exec");
 	var AppPreferences = function () {};
