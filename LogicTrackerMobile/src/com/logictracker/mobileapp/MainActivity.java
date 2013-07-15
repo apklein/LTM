@@ -26,7 +26,8 @@ public class MainActivity extends DroidGap {
 	}
 
 	private void setDefaultAppPreferences() {
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+		Context ctx = appView.getContext();
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
 		Editor editor = sharedPrefs.edit();
 		editor.putString("Device.IMEI", DeviceState.getIMEI(this));
 		editor.commit();

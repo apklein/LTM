@@ -31,7 +31,7 @@ public class AppPreferences extends CordovaPlugin {
 		PluginResult.Status status = PluginResult.Status.OK;
 		String result = "";
 
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.cordova.getActivity().getApplicationContext());
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.cordova.getActivity());
 
 		try {
 			if (action.equals("get")) {
