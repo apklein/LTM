@@ -168,4 +168,9 @@ LogicTracker Mobile App
             value="com.simonmacdonald.prefs.AppPreferences" />
     </feature>
 
+    <access origin="http://*.google.com" />
+    <access origin="http://maps.googleapis.com" />
+    <access origin="http://debug.phonegap.com" />
+    
+    
 </widget>
