@@ -41,6 +41,9 @@ cordova.define("cordova/plugin/applicationpreferences", function(require, export
 if (!window.plugins) {
     window.plugins = {};
 }
+navigator.notification.alert("before", null,
+		'Your2...', 'Great2!');
+
 if (!window.plugins.applicationPreference) {
     window.plugins.applicationPreference = cordova.require("cordova/plugin/applicationpreferences");
 	navigator.notification.alert(window.plugins.applicationPreference, null,
