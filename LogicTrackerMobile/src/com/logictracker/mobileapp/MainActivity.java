@@ -20,8 +20,6 @@ public class MainActivity extends DroidGap {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setDefaultAppPreferences();
-
-		// super.setIntegerProperty("splashscreen", R.drawable.splash);
 		super.loadUrl(Config.getStartUrl());
 
 	}
