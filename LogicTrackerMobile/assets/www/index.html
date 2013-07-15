@@ -1,29 +1,57 @@
 <html>
 <head>
 <script type="text/javascript"
-	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBS5n2CFEegI8KEUAv9C3i_aNZnouoySeU&sensor=false"></script>
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBS5n1CFEegI8KEUAv9C3i_aNZnouoySeU&sensor=false"></script>
 <script type="text/javascript" src="js/libs/cordova-2.9.0.js"></script>
 <script type="text/javascript" src="js/libs/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/libs/jquery.mobile-1.3.1.min.js"></script>
 <script type="text/javascript" src="js/libs/json2.js"></script>
+<script type="text/javascript" src="js/libs/applicationPreferences.js"></script>
 <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
-<script>
+<script type="text/javascript">
 	$(document).bind("mobileinit", function() {
 		$.mobile.defaultPageTransition = 'flow';
 		$.mobile.loadingMessageTextVisible = true;
 	});
 
-	$(document).on(
-			"click",
-			".nextpageButton",
-			function() {
-				var $this = $(this), theme = $this.jqmData("theme")
-						|| $.mobile.loadingMessageTheme, msgText = $this
-						.jqmData("msgtext")
-						|| $.mobile.loadingMessage, textonly = !!$this
-						.jqmData("textonly");
-				$.mobile.showPageLoadingMsg(theme, msgText, textonly);
-			});
+	document.addEventListener("deviceready", function() {
+		//navigator.splashscreen.hide();
+		/*		  if(navigator.network.connection.type == Connection.NONE){
+		 $("#home_network_button").text('No Internet Access')
+		 .attr("data-icon", "delete")
+		 .button('refresh');
+		 }*/
+		navigator.notification.alert('Hi!', null, 'Take my greeting', 'OK');
+		navigator.notification.alert(window.plugins.applicationPreferences,
+				null, 'Take my greeting', 'OK');
+		window.plugins.applicationPreference.get("Device.IMEI",
+				function(value) {
+					navigator.notification.alert('IMEI is: ' + value, null,
+							'Your...', 'Great!');
+				}, function(error) {
+					console.log(JSON.stringify(error));
+					navigator.notification.alert('we cannot get your IMEI.' + value, null,
+							'Something was wrong...', 'wow...');
+					
+				});
+
+		//		Console.log($.plugins.AppPreferences.get("Device.IMEI"));
+		//		$('#IMEI').attr('value', $.plugins.AppPreferences.get("Device.IMEI"));
+
+	});
+
+	/*	$(document).on(
+	 "click",
+	 ".nextpageButton",
+	 function() {
+	 var $this = $(this), theme = $this.jqmData("theme")
+	 || $.mobile.loadingMessageTheme, msgText = $this
+	 .jqmData("msgtext")
+	 || $.mobile.loadingMessage, textonly = !!$this
+	 .jqmData("textonly");
+	 $.mobile.showPageLoadingMsg(theme, msgText, textonly);
+	 });
+	 */
 </script>
 </head>
 <body>
@@ -33,22 +61,26 @@
 			<h6>Step 1</h6>
 		</div>
 		<div data-role="content">
-			<a href="#page2" class="nextpageButton" data-msgtext="going to page 2!">Go to Page 2</a>
+			<div id="IMEI"></div>
+			<a href="#page1" class="nextpageButton"
+				data-msgtext="going to page 1!" data-role="button"
+				data-icon="arrow-r" data-iconpos="right">Go to Page 1</a>
 		</div>
 		<div data-role="footer">
-			<h2>Footer Content</h2>
+			<h1>Footer Content</h1>
 		</div>
 	</div>
-	<div data-role="page" id="page2">
+	<div data-role="page" id="page1">
 		<div data-role="header">
-			<h6>Step 2</h6>
+			<h6>Step 1</h6>
 		</div>
 		<div data-role="content">
-			<button id="gotoPage2" class="nextpageButton" data-msgtext="going to page 1!">Goto Page 1</button>
-			<a href="#page1" class="nextpageButton" data-msgtext="going to page 1!">Go to Page 1</a>
+			<a href="#page1" class="nextpageButton"
+				data-msgtext="going to page 1!" data-role="button"
+				data-icon="arrow-r" data-iconpos="right">Go to Page 1</a>
 		</div>
 		<div data-role="footer">
-			<h2>Footer Content</h2>
+			<h1>Footer Content</h1>
 		</div>
 	</div>
 </body>

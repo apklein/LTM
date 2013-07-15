@@ -17,28 +17,48 @@
  specific language governing permissions and limitations
  under the License.
 -->
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        id        = "com.logictracker.mobileApp"
-        version   = "0.0.1">
-    <name>LogicTracker Mobile App</name>
+<widget
+    id="com.logictracker.mobileApp"
+    version="0.0.1"
+    xmlns="http://www.w3.org/ns/widgets" >
+
+    <name>
+LogicTracker Mobile App
+    </name>
 
     <description>
         A LogicTracker Mobile App
     </description>
 
-    <author href="http://www.logictracker.com" email="apklein@logictracker.com">
+    <author
+        email="apklein@logictracker.com"
+        href="http://www.logictracker.com" >
         LogicTracker Developer Team
     </author>
 
-    <access origin="*"/>
+    <access origin="*" />
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
 
-    <preference name="loglevel" value="DEBUG" />
-    
-    <preference name="splashscreen" value="logo.9" />
-    <preference name="useBrowserHistory" value="false" /> 
+    <preference
+        name="loglevel"
+        value="DEBUG" />
+    <preference
+        name="useBrowserHistory"
+        value="false" />
+    <preference
+        name="splashscreen"
+        value="splash" />
+    <preference
+        name="backgroundColor"
+        value="0xFFF" />
+    <preference
+        name="InAppBrowserStorageEnabled"
+        value="true" />
+    <preference
+        name="auto-hide-splash-screen"
+        value="true" />
     <!--
       <preference name="splashscreen" value="resourceName" />
       <preference name="backgroundColor" value="0xFFF" />
@@ -47,61 +67,105 @@
       <preference name="disallowOverscroll" value="true" />
     -->
 
-    <feature name="App">
-      <param name="android-package" value="org.apache.cordova.App"/>
+    <feature name="App" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.App" />
     </feature>
-    <feature name="Geolocation">
-      <param name="android-package" value="org.apache.cordova.GeoBroker"/>
+    <feature name="Geolocation" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.GeoBroker" />
     </feature>
-    <feature name="Device">
-      <param name="android-package" value="org.apache.cordova.Device"/>
+    <feature name="Device" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.Device" />
     </feature>
-    <feature name="Accelerometer">
-      <param name="android-package" value="org.apache.cordova.AccelListener"/>
+    <feature name="Accelerometer" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.AccelListener" />
     </feature>
-    <feature name="Compass">
-      <param name="android-package" value="org.apache.cordova.CompassListener"/>
+    <feature name="Compass" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.CompassListener" />
     </feature>
-    <feature name="Media">
-      <param name="android-package" value="org.apache.cordova.AudioHandler"/>
+    <feature name="Media" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.AudioHandler" />
     </feature>
-    <feature name="Camera">
-      <param name="android-package" value="org.apache.cordova.CameraLauncher"/>
+    <feature name="Camera" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.CameraLauncher" />
     </feature>
-    <feature name="Contacts">
-      <param name="android-package" value="org.apache.cordova.ContactManager"/>
+    <feature name="Contacts" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.ContactManager" />
     </feature>
-    <feature name="File">
-      <param name="android-package" value="org.apache.cordova.FileUtils"/>
+    <feature name="File" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.FileUtils" />
     </feature>
-    <feature name="NetworkStatus">
-      <param name="android-package" value="org.apache.cordova.NetworkManager"/>
+    <feature name="NetworkStatus" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.NetworkManager" />
     </feature>
-    <feature name="Notification">
-      <param name="android-package" value="org.apache.cordova.Notification"/>
+    <feature name="Notification" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.Notification" />
     </feature>
-    <feature name="Storage">
-      <param name="android-package" value="org.apache.cordova.Storage"/>
+    <feature name="Storage" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.Storage" />
     </feature>
-    <feature name="FileTransfer">
-      <param name="android-package" value="org.apache.cordova.FileTransfer"/>
+    <feature name="FileTransfer" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.FileTransfer" />
     </feature>
-    <feature name="Capture">
-      <param name="android-package" value="org.apache.cordova.Capture"/>
+    <feature name="Capture" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.Capture" />
     </feature>
-    <feature name="Battery">
-      <param name="android-package" value="org.apache.cordova.BatteryListener"/>
+    <feature name="Battery" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.BatteryListener" />
     </feature>
-    <feature name="SplashScreen">
-      <param name="android-package" value="org.apache.cordova.SplashScreen"/>
+    <feature name="SplashScreen" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.SplashScreen" />
     </feature>
-    <feature name="Echo">
-      <param name="android-package" value="org.apache.cordova.Echo"/>
+    <feature name="Echo" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.Echo" />
     </feature>
-    <feature name="Globalization">
-      <param name="android-package" value="org.apache.cordova.Globalization"/>
+    <feature name="Globalization" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.Globalization" />
     </feature>
-    <feature name="InAppBrowser">
-      <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
+    <feature name="InAppBrowser" >
+        <param
+            name="android-package"
+            value="org.apache.cordova.InAppBrowser" />
     </feature>
+    <feature name="applicationPreferences" >
+        <param
+            name="android-package"
+            value="com.simonmacdonald.prefs.AppPreferences" />
+    </feature>
+
 </widget>
