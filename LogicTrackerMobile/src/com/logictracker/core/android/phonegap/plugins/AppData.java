@@ -1,5 +1,6 @@
 package com.logictracker.core.android.phonegap.plugins;
 
+
 import java.util.Iterator;
 import java.util.Map;
 

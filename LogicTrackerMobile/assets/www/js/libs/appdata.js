@@ -43,7 +43,6 @@ if (!window.plugins) {
 	window.plugins = {};
 }
 
-if (!window.plugins.applicationPreference) {
-	window.plugins.applicationPreference = cordova
-			.require("cordova/plugin/appdata");
+if (!window.plugins.appData) {
+	window.plugins.appData = cordova.require("cordova/plugin/appdata");
 }
