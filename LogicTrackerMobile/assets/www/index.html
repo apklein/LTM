@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
 <script type="text/javascript">
 	$(document).bind("mobileinit", function() {
-				$.mobile.defaultPageTransition = 'flow';
-				$.mobile.loadingMessageTextVisible = true;
+		$.mobile.defaultPageTransition = 'flow';
+		$.mobile.loadingMessageTextVisible = true;
 	});
 
 	document.addEventListener("deviceready", function() {
@@ -22,13 +22,12 @@
 		 .attr("data-icon", "delete")
 		 .button('refresh');
 		 }*/
-		window.plugins.appData.get("Device.IMEI",
-				function(value) {
-					$('#imei').html('Your IMEI is: ' + value);
-				}, function(error) {
-					$('#imei').html('Your IMEI is: #ERROR#');
-					console.log(JSON.stringify(error));
-				});
+		window.plugins.appData.get("Device.IMEI", function(value) {
+			$('#imei').html('Your IMEI is: ' + value);
+		}, function(error) {
+			$('#imei').html(
+					'Your IMEI is: #ERROR#<br/>' + JSON.stringify(error));
+		});
 		//		Console.log($.plugins.AppPreferences.get("Device.IMEI"));
 		//		$('#IMEI').attr('value', $.plugins.AppPreferences.get("Device.IMEI"));
 
