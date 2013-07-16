@@ -59,13 +59,6 @@ LogicTracker Mobile App
     <preference
         name="loadUrlTimeoutValue"
         value="20000" />
-    <!--
-      <preference name="splashscreen" value="resourceName" />
-      <preference name="backgroundColor" value="0xFFF" />
-      <preference name="loadUrlTimeoutValue" value="20000" />
-      <preference name="InAppBrowserStorageEnabled" value="true" />
-      <preference name="disallowOverscroll" value="true" />
-    -->
 
     <gap:splash
         src="res/drawable/mdpi/splashicon.png"
@@ -178,8 +171,6 @@ LogicTracker Mobile App
             value="org.apache.cordova.InAppBrowser" />
     </feature>
 
-    <gap:plugin
-        name="AppData"
-        value="com.logictracker.core.android.phonegap.plugins.AppData" />
+    <gap:plugin name="com.logictracker.core.android.phonegap.plugins.AppData" />
 
 </widget>
