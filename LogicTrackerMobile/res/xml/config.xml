@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget
+<widget xmlns:gap="http://phonegap.com/ns/1.0"
     id="com.logictracker.mobileApp"
     version="0.0.1"
     xmlns="http://www.w3.org/ns/widgets" >
@@ -30,9 +30,6 @@ LogicTracker Mobile App
         name="loglevel"
         value="DEBUG" />
     <preference
-        name="splashscreen"
-        value="splash" />
-    <preference
         name="backgroundColor"
         value="0xFFF" />
     <preference
@@ -41,8 +38,9 @@ LogicTracker Mobile App
     <preference
         name="auto-hide-splash-screen"
         value="true" />
-    
-    <preference name="loadUrlTimeoutValue" value="20000" />
+    <preference
+        name="loadUrlTimeoutValue"
+        value="20000" />
     <!--
       <preference name="splashscreen" value="resourceName" />
       <preference name="backgroundColor" value="0xFFF" />
@@ -50,6 +48,11 @@ LogicTracker Mobile App
       <preference name="InAppBrowserStorageEnabled" value="true" />
       <preference name="disallowOverscroll" value="true" />
     -->
+
+    <gap:splash
+        src="res/drawable/mdpi/splashicon.png"
+        gap:density="mdpi"
+        gap:platform="android" />
 
     <feature name="App" >
         <param
@@ -146,9 +149,7 @@ LogicTracker Mobile App
             name="android-package"
             value="org.apache.cordova.InAppBrowser" />
     </feature>
-<!--     <feature name="applicationPreferences" > -->
-<!--         <param -->
-<!--             name="android-package" -->
-<!--             value="com.simonmacdonald.prefs.AppPreferences" /> -->
-<!--     </feature> -->
+
+    <gap:plugin name="com.simonmacdonald.prefs.AppPreferences" />
+
 </widget>
