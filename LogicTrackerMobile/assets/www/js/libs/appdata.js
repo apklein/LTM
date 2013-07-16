@@ -12,27 +12,27 @@ cordova.define("cordova/plugin/appdata", function(require, exports, module) {
 	AppDataError.NO_PREFERENCE_ACTIVITY = 1;
 
 	AppData.prototype.get = function(key, success, fail) {
-		cordova.exec(success, fail, "AppData", "get", [ key ]);
+		cordova.exec(success, fail, "com.logictracker.core.android.phonegap.plugins.AppData", "get", [ key ]);
 	};
 
 	AppData.prototype.set = function(key, value, success, fail) {
-		cordova.exec(success, fail, "AppData", "set", [ key, value ]);
+		cordova.exec(success, fail, "com.logictracker.core.android.phonegap.plugins.AppData", "set", [ key, value ]);
 	};
 
 	AppData.prototype.load = function(success, fail) {
-		cordova.exec(success, fail, "AppData", "load", []);
+		cordova.exec(success, fail, "com.logictracker.core.android.phonegap.plugins.AppData", "load", []);
 	};
 
 	AppData.prototype.show = function(activity, success, fail) {
-		cordova.exec(success, fail, "AppData", "show", [ activity ]);
+		cordova.exec(success, fail, "com.logictracker.core.android.phonegap.plugins.AppData", "show", [ activity ]);
 	};
 
 	AppData.prototype.clear = function(success, fail) {
-		cordova.exec(success, fail, "AppData", "clear", []);
+		cordova.exec(success, fail, "com.logictracker.core.android.phonegap.plugins.AppData", "clear", []);
 	};
 
 	AppData.prototype.remove = function(keyToRemove, success, fail) {
-		cordova.exec(success, fail, "AppData", "remove", [ keyToRemove ]);
+		cordova.exec(success, fail, "com.logictracker.core.android.phonegap.plugins.AppData", "remove", [ keyToRemove ]);
 	};
 
 	var appData = new AppData();

@@ -171,8 +171,6 @@ LogicTracker Mobile App
             value="org.apache.cordova.InAppBrowser" />
     </feature>
 
-    <gap:plugin
-        name="AppData"
-        value="com.logictracker.core.android.phonegap.plugins.AppData" />
+    <gap:plugin name="com.logictracker.core.android.phonegap.plugins.AppData" />
 
 </widget>
