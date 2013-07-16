@@ -7,7 +7,7 @@
 <script type="text/javascript" src="js/libs/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="js/libs/jquery.mobile-1.3.1.min.js"></script>
 <!-- <script type="text/javascript" src="js/libs/json2.js"></script> -->
-<script type="text/javascript" src="js/libs/applicationPreferences.js"></script>
+<script type="text/javascript" src="js/libs/appdata.js"></script>
 <link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
 <script type="text/javascript">
 	$(document).bind("mobileinit", function() {
@@ -22,7 +22,7 @@
 		 .attr("data-icon", "delete")
 		 .button('refresh');
 		 }*/
-		window.plugins.applicationPreference.get("Device.IMEI",
+		window.plugins.appData.get("Device.IMEI",
 				function(value) {
 					$('#imei').html('Your IMEI is: ' + value);
 				}, function(error) {

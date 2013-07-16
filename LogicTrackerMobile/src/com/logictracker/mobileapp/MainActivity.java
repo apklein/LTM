@@ -5,7 +5,7 @@ import org.apache.cordova.DroidGap;
 
 import com.example.logictrackermobile.R;
 import com.logictracker.core.android.DeviceState;
-import com.simonmacdonald.prefs.AppPreferences;
+import com.logictracker.core.android.phonegap.plugins.AppData;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -19,18 +19,7 @@ public class MainActivity extends DroidGap {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setDefaultAppPreferences();
-		super.init();
 		super.loadUrl(Config.getStartUrl());
 
 	}
-
-	private void setDefaultAppPreferences() {
-		Context ctx = appView.getContext();
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-		Editor editor = sharedPrefs.edit();
-		editor.putString("Device.IMEI", DeviceState.getIMEI(this));
-		editor.commit();
-	}
-
 }

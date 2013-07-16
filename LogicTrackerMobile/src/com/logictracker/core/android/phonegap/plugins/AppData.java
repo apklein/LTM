@@ -1,30 +1,48 @@
-package com.simonmacdonald.prefs;
+package com.logictracker.core.android.phonegap.plugins;
 
 import java.util.Iterator;
 import java.util.Map;
 
+import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.api.CallbackContext;
+import org.apache.cordova.api.CordovaInterface;
 import org.apache.cordova.api.CordovaPlugin;
 import org.apache.cordova.api.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.logictracker.core.android.DeviceState;
+
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-public class AppPreferences extends CordovaPlugin {
+public class AppData extends CordovaPlugin {
 
-	private static final String	LOG_TAG							= "AppPrefs";
 	private static final int	NO_PROPERTY						= 0;
 	private static final int	NO_PREFERENCE_ACTIVITY			= 1;
 
 	private static final int	SHOW_PREFERENCEACTIVITY_INTENT	= 1;
 	private CallbackContext		auxCtx;
+
+	@Override
+	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+		super.initialize(cordova, webView);
+
+		Context ctx = cordova.getActivity().getApplicationContext();
+
+		DeviceState ds = DeviceState.getInstanceFor(ctx);
+
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(cordova.getActivity());
+		Editor editor = sharedPrefs.edit();
+		editor.putString("Device.IMEI", ds.getIMEI()).commit();
+		editor.putString("Device.Line1Number", ds.getLine1Number()).commit();
+	}
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
